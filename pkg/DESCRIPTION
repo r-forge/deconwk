@@ -1,0 +1,12 @@
+Package: DeconWK
+Type: Package
+Title:  Deconvolution by Weighted Kernels
+Version: 0.1-0
+Date: 2010-01-13
+Author: Martin L Hazelton and Berwin A Turlach
+Maintainer: Berwin A Turlach <berwin@maths.uwa.edu.au>
+Description: This package contains code for density deconvolution
+             using weighted kernel estimators. 
+License: GPL (>= 2)
+LazyLoad: yes
+URL: https://r-forge.r-project.org/projects/deconwk/

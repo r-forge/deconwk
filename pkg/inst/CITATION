@@ -1,0 +1,25 @@
+citHeader("To cite the DeconWK package in publications use:")
+
+citEntry(entry="Article",
+         author = personList(as.person("M. L. Hazelton"), 
+                             as.person("B. A. Turlach")),
+         title= "Nonparametric density deconvolution by weighted kernel estimators",
+         journal = "Statistics and Computing",
+         volume  = "19",
+         number  = "3",
+         pages   = "217--228",
+         year    = "2009",
+         url     = "http://dx.doi.org/10.1007/s11222-008-9086-7",
+  
+        textVersion =
+        paste("Hazelton, M.L. and Turlach, B.A. (2009).",
+              "Nonparametric density deconvolution by weighted kernel
+        estimators,",
+              "Statistics and Computing 19(3): 217-228.")
+)
+
+
+
+
+
+
