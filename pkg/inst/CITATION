@@ -13,8 +13,7 @@ citEntry(entry="Article",
   
         textVersion =
         paste("Hazelton, M.L. and Turlach, B.A. (2009).",
-              "Nonparametric density deconvolution by weighted kernel
-        estimators,",
+              "Nonparametric density deconvolution by weighted kernel estimators,",
               "Statistics and Computing 19(3): 217-228.")
 )
 

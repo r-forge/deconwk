@@ -23,7 +23,7 @@ LazyLoad: \tab yes\cr
 \author{
 Authors: Martin L Hazelton and Berwin A Turlach
 
-Maintainer: Berwin A Turlach <berwin@maths.uwa.edu.au>
+Maintainer: Berwin A Turlach \email{berwin@maths.uwa.edu.au}
 }
 \references{
 Hazelton, M.L. and Turlach, B.A. (2009). Nonparametric density

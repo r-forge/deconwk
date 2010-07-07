@@ -7,6 +7,7 @@ Author: Martin L Hazelton and Berwin A Turlach
 Maintainer: Berwin A Turlach <berwin@maths.uwa.edu.au>
 Description: This package contains code for density deconvolution
              using weighted kernel estimators. 
+Depends: R (>= 2.7.0), kernlab
 License: GPL (>= 2)
 LazyLoad: yes
 URL: https://r-forge.r-project.org/projects/deconwk/

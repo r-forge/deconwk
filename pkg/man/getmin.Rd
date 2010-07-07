@@ -58,6 +58,9 @@ getmin(x, y, which="global", count.minima=FALSE, verbose=TRUE)
 \note{
   The vector x must be sorted.
 }
+\author{
+Berwin A Turlach \email{berwin@maths.uwa.edu.au}
+}
 \examples{
         x <- -100:100/50
         y <- x*x
