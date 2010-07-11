@@ -1,7 +1,7 @@
 \name{getmin}
 \alias{getmin}
 \title{
-  Approximates the minimum of a function given on a grid.
+  Approximates the minimum of a function given on a grid
 }
 \description{
   Approximates the minimum of a function given on a grid.  Quadratic
