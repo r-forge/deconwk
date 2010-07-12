@@ -1,7 +1,7 @@
 \name{decon.f}
 \alias{decon.f}
 \title{
-  Classical deconvolution density estimates
+  Classical deconvolution density estimate
 }
 \description{
   Calculates the classical deconvolution density estimate given in
