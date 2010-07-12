@@ -10,16 +10,6 @@ This package contains code for density deconvolution using weighted
 kernel estimators.  Type \sQuote{citation(\dQuote{DeconWK})} for details
 of the implemented methods. 
 }
-\details{
-\tabular{ll}{
-Package: \tab DeconWK\cr
-Type: \tab Package\cr
-Version: \tab 0.1-0\cr
-Date: \tab 2010-01-13\cr
-License: \tab GPL (>= 2)\cr
-LazyLoad: \tab yes\cr
-}
-}
 \author{
 Authors: Martin L Hazelton and Berwin A Turlach
 
