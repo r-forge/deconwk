@@ -45,6 +45,9 @@ Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 
 Berwin A Turlach \email{berwin@maths.uwa.edu.au}
 }
+\seealso{
+  \code{\link{wkde}}
+}
 \examples{
   set.seed(100712)
   sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1

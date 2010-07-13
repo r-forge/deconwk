@@ -1,8 +1,8 @@
 Package: DeconWK
 Type: Package
 Title:  Deconvolution by Weighted Kernels
-Version: 0.4-1
-Date: 2010-07-12
+Version: 0.4-2
+Date: 2010-07-13
 Author: Martin L Hazelton and Berwin A Turlach
 Maintainer: Berwin A Turlach <berwin@maths.uwa.edu.au>
 Description: This package contains code for density deconvolution

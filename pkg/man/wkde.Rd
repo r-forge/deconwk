@@ -38,6 +38,9 @@ deconvolution by weighted kernel estimators,  Statistics and Computing
 \author{
 Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 }
+\seealso{
+  \code{\link{w.hat}}
+}
 \examples{
   set.seed(100712)
   sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1
