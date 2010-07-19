@@ -24,8 +24,8 @@ w.hat(y, sigma, h, gamma,
     cross-validation for methods \code{"exact.cv"} and \code{"svm.cv"}.}
   \item{METHOD}{method to be used to solve the quadratic programming
     problem involved in calculating the weights; if \code{"exact"} or
-    \code{"exact.cv"} then the solver described in the paper is used,
-    otherwise the routine \code{ipop} from the \code{kernlab} package.}
+    \code{"exact.cv"} then \code{\link{solveqp}} is used, otherwise
+    \code{\link[kernlab]{ipop}} from the \code{kernlab} package is used.} 
   \item{K}{number of folds to be used if \code{gamma} is chosen by
     cross-validation; defaults to 5.}
   \item{verb}{logical; if \code{TRUE} some progress report will be
@@ -49,7 +49,7 @@ Berwin A Turlach \email{berwin@maths.uwa.edu.au}
   \code{\link{wkde}}
 }
 \examples{
-  set.seed(100712)
+  set.seed(100719)
   sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1
   y <- rden(100, DEN=3, sigma=sig)
   gamma <- exp(seq(from=0, to=6, length=17))

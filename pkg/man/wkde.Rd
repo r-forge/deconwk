@@ -47,10 +47,10 @@ Martin L Hazelton \email{m.hazelton@massey.ac.nz}
   y <- rden(100, DEN=3, sigma=sig)
   f.hat <- wkde(y)
   plot(f.hat, type="l", ylim=c(0, 0.2))
-  w <- w.hat(y, sigma=sig, gamma=1.6) 
+  w <- w.hat(y, sigma=sig, gamma=2.05) 
   fd.hat <- wkde(y, w=w)
   lines(fd.hat, col="red")
-  w <- w.hat(y, sigma=sig, gamma=2.7)
+  w <- w.hat(y, sigma=sig, gamma=13.45)
   fd.hat <- wkde(y, w=w)
   lines(fd.hat, col="blue")
 }

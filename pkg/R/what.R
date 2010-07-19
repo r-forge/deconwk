@@ -50,7 +50,7 @@ w.hat <- function(y, sigma, h, gamma,
 
 .w.hat.exact.cv <- function(y, sigma, h, gamma, K=5, verb=FALSE){
   n <- length(y)
-  res <- .cv.score1(y, h=h, sigma=sigma, gamrng=gamma, K=K, METHOD="exact", verb)
+  res <- cv.score(y, sigma=sigma, h=h, gamma=gamma, METHOD="exact", K=K, verb)
 
   tt <- getmin(log(gamma), res, which="r")
   gamma <- exp(tt$xmin)
@@ -79,9 +79,9 @@ w.hat <- function(y, sigma, h, gamma,
   w.hat*n
 }
 
-.w.hat.svm.cv <- function(y, sigma, h, gamma, K=5, verb){
+.w.hat.svm.cv <- function(y, sigma, h, gamma, K=5, verb=FALSE){
   n <- length(y)
-  res <- .cv.score1(y, h=h, sigma=sigma, gamrng=gamma, K=K, METHOD="svm", verb=FALSE)
+  res <- cv.score(y, sigma=sigma, h=h, gamma=gamma, METHOD="svm", K=K, verb)
 
   tt <- getmin(log(gamma), res, which="r")
   gamma <- exp(tt$xmin)
@@ -90,11 +90,19 @@ w.hat <- function(y, sigma, h, gamma,
   res
 }
 
-.cv.score1 <- function(y, h, sigma, gamrng, K=5, METHOD, verb){
+cv.score <- function(y, sigma, h, gamma,
+                     METHOD=c("exact", "svm"), K=5, verb=FALSE){
   n <- length(y)
 
-  ind <- rep(1:K, length=n)
-  res <- 0*gamrng
+  if (missing(h))
+    h <- bw.SJ(y,method="dpi")
+
+  METHOD <- match.arg(METHOD)
+  
+  ## original code was named cv.score1
+  ## original code did not have sample()
+  ind <- sample(rep(1:K, length=n)) 
+  res <- 0*gamma
 
   for(grp in 1:K){
     if(verb)
@@ -104,10 +112,10 @@ w.hat <- function(y, sigma, h, gamma,
     yout <- y[-ii]
     Y <- outer(yin, yout, "-")
     M1 <- dnorm(Y, sd=sqrt(h*h+sigma*sigma))
-    for(i in seq(along=gamrng)){
+    for(i in seq(along=gamma)){
       if(verb)
         cat(i, " ")
-      w <- w.hat(yout, h=h, sigma=sigma, gamma=gamrng[i], METHOD)
+      w <- w.hat(yout, h=h, sigma=sigma, gamma=gamma[i], METHOD)
       res[i] <-  res[i] + mean(log(M1%*%w))
     }
     if(verb)
