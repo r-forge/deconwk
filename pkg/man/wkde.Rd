@@ -50,7 +50,7 @@ Martin L Hazelton \email{m.hazelton@massey.ac.nz}
   w <- w.hat(y, sigma=sig, gamma=2.05) 
   fd.hat <- wkde(y, w=w)
   lines(fd.hat, col="red")
-  w <- w.hat(y, sigma=sig, gamma=13.45)
+  w <- w.hat(y, sigma=sig, gamma=4.4)
   fd.hat <- wkde(y, w=w)
   lines(fd.hat, col="blue")
 }
