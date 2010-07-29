@@ -52,23 +52,23 @@ Berwin A Turlach \email{berwin@maths.uwa.edu.au}
   set.seed(100719)
   sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1
   y <- rden(100, DEN=3, sigma=sig)
-  gamma <- exp(seq(from=0, to=6, length=17))
+  gamma.ridge <- exp(seq(from=0, to=6, length=17))
 
   save.seed <- .Random.seed
-  w1 <- w.hat(y, sigma=sig, gamma=gamma, METHOD="exact.cv", verb=TRUE)
+  w1 <- w.hat(y, sigma=sig, gamma=gamma.ridge, METHOD="exact.cv", verb=TRUE)
   plot(y, w1, type="h")
   attributes(w1)
   .Random.seed <- save.seed
-  w2 <- w.hat(y, sigma=sig, gamma=gamma, METHOD="svm.cv", verb=TRUE)
+  w2 <- w.hat(y, sigma=sig, gamma=gamma.ridge, METHOD="svm.cv", verb=TRUE)
   plot(y, w2, type="h")
   attributes(w2)
 
   .Random.seed <- save.seed
-  w1 <- w.hat(y, sigma=sig, gamma=gamma, METHOD="exact.cv", K=10, verb=TRUE)
+  w1 <- w.hat(y, sigma=sig, gamma=gamma.ridge, METHOD="exact.cv", K=10, verb=TRUE)
   plot(y, w1, type="h")
   attributes(w1)
   .Random.seed <- save.seed
-  w2 <- w.hat(y, sigma=sig, gamma=gamma, METHOD="svm.cv", K=10, verb=TRUE)
+  w2 <- w.hat(y, sigma=sig, gamma=gamma.ridge, METHOD="svm.cv", K=10, verb=TRUE)
   plot(y, w2, type="h")
   attributes(w2)
 }

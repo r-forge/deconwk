@@ -46,30 +46,30 @@ Berwin A Turlach \email{berwin@maths.uwa.edu.au}
   sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1
   y <- rden(100, DEN=3, sigma=sig)
   h <- bw.SJ(y, method="dpi")
-  gamma <- exp(seq(from=0, to=6, length=17))
+  gamma.ridge <- exp(seq(from=0, to=6, length=17))
 
   save.seed <- .Random.seed
-  cv1 <- cv.score(y, sigma=sig, h=h, gamma=gamma, METHOD="exact", verb=TRUE)
-  plot(log(gamma), cv1, type="b")
-  tmp <- getmin(log(gamma), cv1, which="r")
+  cv1 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="exact", verb=TRUE)
+  plot(log(gamma.ridge), cv1, type="b")
+  tmp <- getmin(log(gamma.ridge), cv1, which="r")
   abline(v=tmp$xmin)
 
   .Random.seed <- save.seed
-  cv2 <- cv.score(y, sigma=sig, h=h, gamma=gamma, METHOD="svm", verb=TRUE)
-  plot(log(gamma), cv2, type="b")
-  tmp <- getmin(log(gamma), cv2, which="r")
+  cv2 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="svm", verb=TRUE)
+  plot(log(gamma.ridge), cv2, type="b")
+  tmp <- getmin(log(gamma.ridge), cv2, which="r")
   abline(v=tmp$xmin)
 
   .Random.seed <- save.seed
-  cv1 <- cv.score(y, sigma=sig, h=h, gamma=gamma, METHOD="exact", K=10, verb=TRUE)
-  plot(log(gamma), cv1, type="b")
-  tmp <- getmin(log(gamma), cv1, which="r")
+  cv1 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="exact", K=10, verb=TRUE)
+  plot(log(gamma.ridge), cv1, type="b")
+  tmp <- getmin(log(gamma.ridge), cv1, which="r")
   abline(v=tmp$xmin)
 
   .Random.seed <- save.seed
-  cv2 <- cv.score(y, sigma=sig, h=h, gamma=gamma, METHOD="svm", K=10, verb=TRUE)
-  plot(log(gamma), cv2, type="b")
-  tmp <- getmin(log(gamma), cv2, which="r")
+  cv2 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="svm", K=10, verb=TRUE)
+  plot(log(gamma.ridge), cv2, type="b")
+  tmp <- getmin(log(gamma.ridge), cv2, which="r")
   abline(v=tmp$xmin)
 }
 \keyword{smooth}
