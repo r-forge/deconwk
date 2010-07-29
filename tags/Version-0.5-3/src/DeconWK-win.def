@@ -1,0 +1,3 @@
+LIBRARY DeconWK.dll
+EXPORTS
+ R_init_DeconWK
