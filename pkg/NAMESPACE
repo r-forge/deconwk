@@ -2,3 +2,5 @@ exportPattern("^[[:alpha:]]+")
 
 useDynLib(DeconWK, .registration = TRUE, .fixes = ".DCWK_")
 
+importFrom(utils, packageDescription)
+importFrom(stats, bw.SJ)
