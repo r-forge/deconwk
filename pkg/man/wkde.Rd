@@ -8,11 +8,11 @@
   (5) of Hazelton and Turlach (2009). 
 }
 \usage{
-wkde(y, eval = NA, w = NA, h = NA)
+wkde(y, eval, w, h)
 }
 \arguments{
   \item{y}{the observed values.}
-  \item{eval}{grid on which the deconvolution density estimate be
+  \item{eval}{grid on which the deconvolution density estimate is to be
     calculated.}
   \item{w}{the weights to be used.}
   \item{h}{the smoothing parameter to be used.}
@@ -39,10 +39,10 @@ deconvolution by weighted kernel estimators,  Statistics and Computing
 Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 }
 \seealso{
-  \code{\link{w.hat}}
+  \code{\link{w.hat}}, \code{\link{wkde.plot}}
 }
 \examples{
-  set.seed(100712)
+  set.seed(100719)
   sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1
   y <- rden(100, DEN=3, sigma=sig)
   f.hat <- wkde(y)

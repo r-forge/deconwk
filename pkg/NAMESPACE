@@ -5,5 +5,8 @@ useDynLib(DeconWK, .registration = TRUE, .fixes = ".DCWK_")
 importFrom(kernlab, ipop)
 importFrom(ks, Hpi)
 importFrom(mvtnorm, dmvnorm)
-importFrom(stats, bw.SJ)
+
+importFrom(graphics, contour, plot, lines, points)
+importFrom(stats, bw.SJ, rnorm, dnorm, sd, var, optimize, integrate)
 importFrom(utils, packageDescription)
+

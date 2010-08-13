@@ -39,10 +39,26 @@ Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 Berwin A Turlach \email{berwin@maths.uwa.edu.au}
 }
 \seealso{
-  \code{\link{wkde}}
+  \code{\link{wkde.2d}}, \code{\link{wkde.contour}}, \code{\link[ks]{Hpi}}
 }
 \examples{
-  set.seed(100719)
+  library(ks)
+  Age <- framingham[,2]
+  Age.lim.2 <- 56 # set age cut off to limit size of data set
+  SBP1.A <- framingham[Age>=Age.lim.2,3] # SBP, measure 1, Exam 2 
+  SBP2.A <- framingham[Age>=Age.lim.2,4] # SBP, measure 2, Exam 2 
+  SBP1.B <- framingham[Age>=Age.lim.2,5] # SBP, measure 1, Exam 3 
+  SBP2.B <- framingham[Age>=Age.lim.2,6] # SBP, measure 2, Exam 3 
+  sigma.fram.A <- sd(SBP1.A-SBP2.A)
+  sigma.fram.B <- sd(SBP1.B-SBP2.B)
+  Sigma.fram <- diag(c(sigma.fram.A,sigma.fram.B))^2
+  SBP.A <- SBP1.A
+  SBP.B <- SBP1.B
+  SBP.bi <- cbind(SBP.A,SBP.B)
+  H.fram <- Hpi(SBP.bi)
+
+  w <-  w.hat.mv(SBP.bi, Sigma.fram, H.fram, gamma = 0.4)
+  plot(SBP.bi, cex=w)  
 }
 \keyword{distribution}
 \keyword{smooth}

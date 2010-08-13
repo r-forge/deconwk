@@ -43,10 +43,11 @@ deconvolution by weighted kernel estimators,  Statistics and Computing
 Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 }
 \examples{
-  set.seed(100712)
+  set.seed(100719)
   y <- rden(100, DEN=3, sigma=sqrt(29/40)) # Var(Z)/Var(X) = 0.1
   f.hat <- decon.f(y, sigma=sqrt(29/40))
   plot(f.hat, type="l")
+  abline(h=0)
 }
 \keyword{distribution}
 \keyword{smooth}

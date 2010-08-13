@@ -15,7 +15,10 @@ The main functions are:
 \tabular{ll}{
 \code{\link{w.hat}}:\tab Calculates the weights for density deconvolution using
 weighted kernel estimators\cr 
-\code{\link{wkde}}:\tab Calculates a weighted kernel density estimates\cr
+\code{\link{w.hat.mv}}:\tab Calculates the weights for density
+deconvolution using bivariate weighted kernel estimators\cr 
+\code{\link{wkde}}:\tab Calculates a weighted kernel density estimate\cr
+\code{\link{wkde.2d}}:\tab Calculates a bivariate weighted kernel density estimates\cr
 \code{\link{decon.f}}:\tab Calculates a classical deconvolution estimate
 }
 }

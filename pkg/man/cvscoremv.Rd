@@ -38,34 +38,35 @@ Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 \code{\link{w.hat.mv}}
 }
 \examples{
-  set.seed(100719)
-  sig <- sqrt(29/40)  # Var(Z)/Var(X) = 0.1
-  y <- rden(100, DEN=3, sigma=sig)
-  h <- bw.SJ(y, method="dpi")
-  gamma.ridge <- exp(seq(from=0, to=6, length=17))
+  library(ks)
+  Age <- framingham[,2]
+  Age.lim.2 <- 56 # set age cut off to limit size of data set
+  SBP1.A <- framingham[Age>=Age.lim.2,3] # SBP, measure 1, Exam 2 
+  SBP2.A <- framingham[Age>=Age.lim.2,4] # SBP, measure 2, Exam 2 
+  SBP1.B <- framingham[Age>=Age.lim.2,5] # SBP, measure 1, Exam 3 
+  SBP2.B <- framingham[Age>=Age.lim.2,6] # SBP, measure 2, Exam 3 
+  sigma.fram.A <- sd(SBP1.A-SBP2.A)
+  sigma.fram.B <- sd(SBP1.B-SBP2.B)
+  Sigma.fram <- diag(c(sigma.fram.A,sigma.fram.B))^2
+  SBP.A <- SBP1.A
+  SBP.B <- SBP1.B
+  SBP.bi <- cbind(SBP.A,SBP.B)
+  H.fram <- Hpi(SBP.bi)
 
-  save.seed <- .Random.seed
-  cv1 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="exact", verb=TRUE)
-  plot(log(gamma.ridge), cv1, type="b")
-  tmp <- getmin(log(gamma.ridge), cv1, which="r")
+  gamma.ridge <- exp(seq(from=-2, to=3, length=17))
+
+  set.seed(100813)
+  cv <- cv.score.mv(SBP.bi, Sigma=Sigma.fram, H=H.fram,
+                    gamma=gamma.ridge, verb=TRUE)
+  plot(log(gamma.ridge), cv, type="b")
+  tmp <- getmin(log(gamma.ridge), cv, which="r")
   abline(v=tmp$xmin)
 
-  .Random.seed <- save.seed
-  cv2 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="svm", verb=TRUE)
-  plot(log(gamma.ridge), cv2, type="b")
-  tmp <- getmin(log(gamma.ridge), cv2, which="r")
-  abline(v=tmp$xmin)
-
-  .Random.seed <- save.seed
-  cv1 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="exact", K=10, verb=TRUE)
-  plot(log(gamma.ridge), cv1, type="b")
-  tmp <- getmin(log(gamma.ridge), cv1, which="r")
-  abline(v=tmp$xmin)
-
-  .Random.seed <- save.seed
-  cv2 <- cv.score(y, sigma=sig, h=h, gamma=gamma.ridge, METHOD="svm", K=10, verb=TRUE)
-  plot(log(gamma.ridge), cv2, type="b")
-  tmp <- getmin(log(gamma.ridge), cv2, which="r")
+  set.seed(100813)
+  cv <- cv.score.mv(SBP.bi, Sigma=Sigma.fram, H=H.fram,
+                    gamma=gamma.ridge, verb=TRUE, K=10)
+  plot(log(gamma.ridge), cv, type="b")
+  tmp <- getmin(log(gamma.ridge), cv, which="r")
   abline(v=tmp$xmin)
 }
 \keyword{smooth}
