@@ -28,7 +28,7 @@ deconvolution by weighted kernel estimators,  Statistics and Computing
 19(3): 217--228. \url{http://dx.doi.org/10.1007/s11222-008-9086-7}.  
 }
 \author{
-Berwin A Turlach \email{berwin@maths.uwa.edu.au}
+Berwin A Turlach \email{Berwin.Turlach@gmail.com}
 }
 \seealso{
   \code{\link[kernlab]{ipop}}

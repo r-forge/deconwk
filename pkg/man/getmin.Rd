@@ -59,7 +59,7 @@ getmin(x, y, which="global", count.minima=FALSE, verbose=TRUE)
   The vector x must be sorted.
 }
 \author{
-Berwin A Turlach \email{berwin@maths.uwa.edu.au}
+Berwin A Turlach \email{Berwin.Turlach@gmail.com}
 }
 \examples{
         x <- -100:100/50

@@ -36,7 +36,7 @@ deconvolution by weighted kernel estimators,  Statistics and Computing
 \author{
 Martin L Hazelton \email{m.hazelton@massey.ac.nz}
 
-Berwin A Turlach \email{berwin@maths.uwa.edu.au}
+Berwin A Turlach \email{Berwin.Turlach@gmail.com}
 }
 \seealso{
   \code{\link{wkde.2d}}, \code{\link{wkde.contour}}, \code{\link[ks]{Hpi}}
