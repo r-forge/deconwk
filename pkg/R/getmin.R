@@ -4,7 +4,7 @@ getmin<-function(x, y, which="global", count.minima=FALSE, verbose=TRUE){
   if( length(y) != n)
     stop("x and y do not match.")
 
-  flag <- charmatch(which,c("left","global","right"), nom=-1)
+  flag <- charmatch(which,c("left","global","right"), nomatch=-1)
   if( flag == -1 )
     stop("Parameter `which' must be either `left', `global' or `right'.")
   flag <- flag-2
